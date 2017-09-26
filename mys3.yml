@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local
   vars_files:
-  - [vars.yml]
+  - [var.yml]
   tasks:
   - name: creation of S3 bucket
     s3_bucket:
