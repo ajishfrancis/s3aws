@@ -1,0 +1,13 @@
+---
+- name: upload file to s3 bucket
+  hosts: localhost
+  connection: local
+  vars_files:
+  - [var.yml]
+  tasks:
+  - name:uploading file
+  s3:
+    bucket: mybucket
+    object: /my/desired/key.txt
+    src: /usr/local/myfile.txt
+    mode: put
