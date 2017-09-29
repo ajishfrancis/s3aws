@@ -1,0 +1,20 @@
+{
+  "Id": "Policy1506574719176",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1506574713424",
+      "Action": [
+        "s3:GetBucketLogging",
+        "s3:GetBucketNotification"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::ajish",
+      "Principal": {
+        "AWS": [
+          "S3"
+        ]
+      }
+    }
+  ]
+}
