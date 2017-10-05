@@ -1,0 +1,18 @@
+---
+- name: Create IAM role with custom trust relationship
+  hosts: localhost
+  connection: local
+  vars_files:
+  - [var.yml]
+  tasks:
+  - name: creation of role
+    iam:
+     iam_type: role
+     name: vmimport
+     state: present
+     aws_access_key: "{{aws_access_key}}"
+     aws_secret_key: "{{aws_secret_key}}" 
+    # policy-document: trust-policy.json 
+    # trust_policy_filepath: "{{ lookup('file','trust-policy.json') }}"
+     trust_policy_filepath: trust-policy.json
+ 

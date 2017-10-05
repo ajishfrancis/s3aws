@@ -10,7 +10,7 @@
       "Condition": {
         "Bool": { "aws:SecureTransport": false }
       },
-      "Resource":"arn:aws:s3:::cc-media-repo/*"
+      "Resource":"arn:aws:s3:::ansiblebucketcoe/*"
     }
   ]
 }

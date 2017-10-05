@@ -1,0 +1,16 @@
+---
+   - name: Configuring Role Based Access Control.
+     hosts: localhost
+     connection: local
+     vars_files:
+     - [var.yml]
+     tasks:
+     - name: Create Network Access policy from.
+       iam_policy:
+              iam_type: user
+              iam_name: Neha
+              policy_name: S3ReadOnlyAccess
+              policy_document: Policy.json
+              state: present
+              aws_access_key: "{{ aws_access_key }}"
+              aws_secret_key: "{{ aws_secret_key }}"

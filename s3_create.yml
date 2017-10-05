@@ -7,10 +7,12 @@
   tasks:
   - name: creation of S3 bucket
     s3_bucket:
-      name: ansiblebucket2017
+      name: ansiblebucketcoe
       region: eu-west-1
       versioning: yes
-      state: absent
+      state: present
+    # policy: "{{ lookup('file','s3-ssl-policy.json') }}"	
+     # policy_json: "specific_vpc.json"
       aws_access_key: "{{aws_access_key}}"
       aws_secret_key: "{{aws_secret_key}}"
     register: s3_url
